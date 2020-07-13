@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import MainStore from './stores/TodoList';
+import { Provider } from 'mobx-react';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider MainStore={MainStore}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
+  // <Provider {...stores}>
+  //   <App />
+  // </Provider>,
+  // document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
